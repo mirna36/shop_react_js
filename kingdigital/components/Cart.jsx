@@ -11,7 +11,14 @@ import { urlFor } from '../lib/client';
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart } = useStateContext()
+  const {
+    totalPrice,
+    totalQuantities,
+    cartItems,
+    setShowCart,
+    toggleCartItemQuantity,
+    onRemove
+  } = useStateContext();
   
     const tva = totalPrice * 0.119;
     const soustotal = totalPrice - tva;
@@ -60,18 +67,28 @@ const Cart = () => {
                   <div className="flex bottom">
                     <div>
                       <p className="quantity-desc">
-                        <span className="minus" onClick="">
+                        <span
+                          className="minus"
+                          onClick={() =>
+                            toggleCartItemQuantity(item._id, "dec")
+                          }
+                        >
                           <AiOutlineMinus />
                         </span>
                         <span className="num" onClick>
-                          0
+                          {item.quantity}
                         </span>
-                        <span className="plus" onClick="">
+                        <span
+                          className="plus"
+                          onClick={() =>
+                            toggleCartItemQuantity(item._id, "inc")
+                          }
+                        >
                           <AiOutlinePlus />
                         </span>
                       </p>
                     </div>
-                    <button type="button" className="remove-item" onClick="">
+                    <button type="button" className="remove-item" onClick={() =>onRemove(item)}>
                       <TiDeleteOutline />
                     </button>
                   </div>
@@ -91,16 +108,12 @@ const Cart = () => {
             </div>
             <div className="total">
               <h3>Total:</h3>
-              <h3>{totalPrice}€</h3>
+              <h3>{totalPrice.toFixed(2)}€</h3>
             </div>
             <div className="btn-container">
-            <button
-            type="button"
-            className="btn"
-            onClick="">
-            Paiement
-
-            </button>
+              <button type="button" className="btn" onClick="">
+                Paiement
+              </button>
             </div>
           </div>
         )}
