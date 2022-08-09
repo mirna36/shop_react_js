@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import {  BsBagXFill } from "react-icons/bs";
+import { BsBagXFill } from "react-icons/bs";
 
 const Canceled = () => {
   return (
@@ -10,12 +10,12 @@ const Canceled = () => {
           <BsBagXFill />
         </p>
         <h3>
-          Votre commande n'a pu aboutir. Merci de vérifier votre moyen de
+          Votre commande n&apos;a pu aboutir. Merci de vérifier votre moyen de
           paiement.
         </h3>
 
         <p className="description">
-          Pour toutes questions, merci d'envoyer un email à
+          Pour toutes questions, merci d&apos;envoyer un email à
           <a className="email" href="mailto:mirnakona@gmail.com">
             order@kingdigital.com
           </a>

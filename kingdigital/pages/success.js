@@ -25,7 +25,7 @@ const Success = () => {
         <h2>Merci pour votre commande!</h2>
         <p className="email-msg">Un email de confirmation vous a été envoyé.</p>
         <p className="description">
-          Pour toutes questions, merci d'envoyer un email à
+          Pour toutes questions, merci d&apos;envoyer un email à
           <a className="email" href="mailto:mirnakona@gmail.com">
             order@kingdigital.com
           </a>
