@@ -1,9 +1,6 @@
 {
   "name": "kingdigital",
   "version": "1.0.0",
-  "engines": {
-    "node": "6.14.12"
-  },
   "private": true,
   "scripts": {
     "dev": "next dev",
